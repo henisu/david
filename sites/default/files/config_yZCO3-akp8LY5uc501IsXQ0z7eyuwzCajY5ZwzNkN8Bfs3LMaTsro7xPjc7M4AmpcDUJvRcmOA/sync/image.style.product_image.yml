@@ -1,0 +1,15 @@
+uuid: ffad3d70-eeda-4788-beb9-005acd4a92d7
+langcode: en
+status: true
+dependencies: {  }
+name: product_image
+label: 'Product image'
+effects:
+  573c2709-491f-4984-9d1d-9dedc0b9e050:
+    uuid: 573c2709-491f-4984-9d1d-9dedc0b9e050
+    id: image_scale
+    weight: 1
+    data:
+      width: 400
+      height: 320
+      upscale: false

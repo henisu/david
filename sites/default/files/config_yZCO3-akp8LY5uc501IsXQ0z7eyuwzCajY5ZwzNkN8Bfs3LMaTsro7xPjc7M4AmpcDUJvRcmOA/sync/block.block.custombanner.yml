@@ -1,0 +1,30 @@
+uuid: 103689db-b15d-4aab-b172-bc792ee6009e
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:7741301f-1d4e-4379-83f9-fe089dce5e18'
+  module:
+    - block_content
+    - system
+  theme:
+    - basic
+id: custombanner
+theme: basic
+region: content
+weight: -6
+provider: null
+plugin: 'block_content:7741301f-1d4e-4379-83f9-fe089dce5e18'
+settings:
+  id: 'block_content:7741301f-1d4e-4379-83f9-fe089dce5e18'
+  label: 'Custom banner'
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  request_path:
+    id: request_path
+    pages: '<front>'
+    negate: false

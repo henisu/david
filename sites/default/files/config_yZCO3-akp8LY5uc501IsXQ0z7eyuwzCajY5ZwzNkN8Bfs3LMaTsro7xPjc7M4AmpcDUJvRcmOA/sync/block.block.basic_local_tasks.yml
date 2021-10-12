@@ -1,4 +1,4 @@
-uuid: 49d56b5e-a8bd-4b87-ac98-eff2680e0342
+uuid: 9dd23c5c-06e9-4747-b1a4-4510db75f412
 langcode: en
 status: true
 dependencies:
@@ -9,12 +9,12 @@ _core:
 id: basic_local_tasks
 theme: basic
 region: content
-weight: -40
+weight: -8
 provider: null
 plugin: local_tasks_block
 settings:
   id: local_tasks_block
-  label: Tabs
+  label: Fülek
   provider: core
   label_display: '0'
   primary: true

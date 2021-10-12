@@ -1,11 +1,11 @@
-uuid: 2143a280-57a0-402f-8b72-76b52d6fe8d3
-name: 'Eva House'
-mail: vktrnagy64@gmail.com
+uuid: 0af3e9e9-6619-4a2c-831c-ee10744fb564
+name: Dialtech
+mail: test@test.com
 slogan: ''
 page:
   403: ''
   404: ''
-  front: /node/1
+  front: /node/7
 admin_compact_mode: false
 weight_select_max: 100
 langcode: en

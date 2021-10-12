@@ -1,4 +1,4 @@
-uuid: 02180f37-8a5a-4883-ac8a-c7de1cd26cc5
+uuid: f0377df5-fea9-46ee-91c8-d963f195e5ee
 langcode: en
 status: true
 dependencies:
@@ -13,12 +13,12 @@ _core:
 id: basic_footer
 theme: basic
 region: footer
-weight: -8
+weight: 0
 provider: null
 plugin: 'system_menu_block:footer'
 settings:
   id: 'system_menu_block:footer'
-  label: 'Footer menu'
+  label: 'Lábléc menü'
   provider: system
   label_display: '0'
   level: 1

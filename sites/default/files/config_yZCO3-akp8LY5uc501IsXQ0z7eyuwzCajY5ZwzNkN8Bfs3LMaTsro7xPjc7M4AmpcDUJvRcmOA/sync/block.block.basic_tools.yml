@@ -1,4 +1,4 @@
-uuid: 62d35a38-2e0b-4f17-a58e-b3ae62073034
+uuid: c0cd3f82-8854-43af-b587-89f3ae6f220c
 langcode: en
 status: false
 dependencies:
@@ -13,12 +13,12 @@ _core:
 id: basic_tools
 theme: basic
 region: sidebar_first
-weight: 0
+weight: -6
 provider: null
 plugin: 'system_menu_block:tools'
 settings:
   id: 'system_menu_block:tools'
-  label: Tools
+  label: Eszközök
   provider: system
   label_display: visible
   level: 1

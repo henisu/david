@@ -1,0 +1,24 @@
+uuid: a2535b6a-55a0-46a0-930d-72b28f9a5869
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_title
+    - paragraphs.paragraphs_type.section
+  module:
+    - text
+id: paragraph.section.field_title
+field_name: field_title
+entity_type: paragraph
+bundle: section
+label: Title
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: "<p>Section title</p>\r\n"
+    format: basic_html
+default_value_callback: ''
+settings: {  }
+field_type: text_long

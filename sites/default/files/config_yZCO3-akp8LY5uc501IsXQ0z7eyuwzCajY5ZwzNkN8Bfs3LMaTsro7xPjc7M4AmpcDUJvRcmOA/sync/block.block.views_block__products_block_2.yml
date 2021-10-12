@@ -1,0 +1,29 @@
+uuid: 314b8db9-94bd-4b56-b24b-31f5b0952fc2
+langcode: hu
+status: true
+dependencies:
+  config:
+    - views.view.products
+  module:
+    - system
+    - views
+  theme:
+    - basic
+id: views_block__products_block_2
+theme: basic
+region: content
+weight: -5
+provider: null
+plugin: 'views_block:products-block_2'
+settings:
+  id: 'views_block:products-block_2'
+  label: ''
+  provider: views
+  label_display: '0'
+  views_label: ''
+  items_per_page: none
+visibility:
+  request_path:
+    id: request_path
+    pages: /discounts
+    negate: false

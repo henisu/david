@@ -1,4 +1,4 @@
-uuid: 56a20ebc-0096-4383-82b0-014c9386c48e
+uuid: d0a915ac-e178-41c9-9631-795c9d4a2600
 langcode: en
 status: true
 dependencies: {  }
@@ -7,7 +7,7 @@ _core:
 id: feedback
 label: 'Website feedback'
 recipients:
-  - vktrnagy64@gmail.com
+  - test@test.com
 reply: ''
 weight: 0
 message: 'Your message has been sent.'

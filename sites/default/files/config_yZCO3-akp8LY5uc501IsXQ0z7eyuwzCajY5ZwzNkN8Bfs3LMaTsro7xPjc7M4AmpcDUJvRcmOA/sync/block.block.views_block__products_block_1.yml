@@ -1,0 +1,29 @@
+uuid: 7012aae5-9af3-4f8d-81c4-8f6d4365c778
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.products
+  module:
+    - system
+    - views
+  theme:
+    - basic
+id: views_block__products_block_1
+theme: basic
+region: content
+weight: -4
+provider: null
+plugin: 'views_block:products-block_1'
+settings:
+  id: 'views_block:products-block_1'
+  label: ''
+  provider: views
+  label_display: '0'
+  views_label: ''
+  items_per_page: none
+visibility:
+  request_path:
+    id: request_path
+    pages: '<front>'
+    negate: false

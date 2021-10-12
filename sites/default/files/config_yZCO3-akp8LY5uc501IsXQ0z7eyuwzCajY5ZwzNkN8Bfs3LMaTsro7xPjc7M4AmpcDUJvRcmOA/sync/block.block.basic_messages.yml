@@ -1,6 +1,6 @@
-uuid: 440aa0a0-ff45-4fa5-bc67-f67331abaab5
+uuid: b2add850-75ef-48bc-ac6a-cf44da50a4ad
 langcode: en
-status: true
+status: false
 dependencies:
   module:
     - system
@@ -16,7 +16,7 @@ provider: null
 plugin: system_messages_block
 settings:
   id: system_messages_block
-  label: 'Status messages'
+  label: Állapotüzenetek
   provider: system
   label_display: '0'
 visibility: {  }

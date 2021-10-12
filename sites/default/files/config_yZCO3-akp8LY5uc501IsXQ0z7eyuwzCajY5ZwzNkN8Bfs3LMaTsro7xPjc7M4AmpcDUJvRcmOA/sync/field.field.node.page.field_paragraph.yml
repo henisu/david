@@ -1,14 +1,11 @@
-uuid: 9d2b0f9b-228d-4562-b8ee-96955cd5ccd4
+uuid: ed7301de-3fa4-4931-863c-d1fa07f15308
 langcode: en
 status: true
 dependencies:
   config:
     - field.storage.node.field_paragraph
     - node.type.page
-    - paragraphs.paragraphs_type.basic_section
-    - paragraphs.paragraphs_type.gallery
-    - paragraphs.paragraphs_type.hero_section
-    - paragraphs.paragraphs_type.slider_row
+    - paragraphs.paragraphs_type.form
   module:
     - entity_reference_revisions
 id: node.page.field_paragraph
@@ -26,33 +23,12 @@ settings:
   handler_settings:
     negate: 0
     target_bundles:
-      hero_section: hero_section
-      basic_section: basic_section
-      gallery: gallery
-      slider_row: slider_row
+      form: form
     target_bundles_drag_drop:
-      basic_section:
-        enabled: true
-        weight: 5
-      basic_title_with_text:
-        weight: 8
-        enabled: false
-      gallery:
-        enabled: true
-        weight: 11
-      hero_section:
+      form:
         enabled: true
         weight: 3
-      image:
-        weight: 13
-        enabled: false
-      image_with_text_cube:
-        weight: 5
-        enabled: false
-      slider_row:
-        enabled: true
-        weight: 11
-      slider_with_text:
-        weight: 2
+      section:
+        weight: 4
         enabled: false
 field_type: entity_reference_revisions

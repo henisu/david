@@ -1,4 +1,4 @@
-uuid: b387453d-f2d8-4199-b20e-4653278b49d9
+uuid: 1e448ba0-b5fb-4a06-9ca5-821ed0cf9f7d
 langcode: en
 status: true
 dependencies:
@@ -11,12 +11,12 @@ _core:
 id: basic_content
 theme: basic
 region: content
-weight: 0
+weight: -2
 provider: null
 plugin: system_main_block
 settings:
   id: system_main_block
-  label: 'Main page content'
+  label: 'Az oldal fő tartalma'
   provider: system
   label_display: '0'
 visibility: {  }

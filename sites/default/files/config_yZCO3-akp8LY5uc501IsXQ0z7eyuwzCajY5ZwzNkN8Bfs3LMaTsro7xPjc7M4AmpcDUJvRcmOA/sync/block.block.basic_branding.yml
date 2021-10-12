@@ -1,4 +1,4 @@
-uuid: 9e8d671e-d20d-4a49-966b-aebead85e882
+uuid: d08364ac-7e6e-4419-9998-e10aceb24891
 langcode: en
 status: true
 dependencies:
@@ -16,7 +16,7 @@ provider: null
 plugin: system_branding_block
 settings:
   id: system_branding_block
-  label: 'Site branding'
+  label: 'Webhely márkázása'
   provider: system
   label_display: '0'
   use_site_logo: true

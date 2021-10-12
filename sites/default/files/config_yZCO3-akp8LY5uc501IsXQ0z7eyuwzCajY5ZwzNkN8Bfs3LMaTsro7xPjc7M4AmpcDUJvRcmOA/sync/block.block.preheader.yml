@@ -1,0 +1,25 @@
+uuid: 460d4ea3-c969-43b7-93a2-61ca67f7082b
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:729722d0-7e7b-42ec-a5cc-898d5fe0c100'
+  module:
+    - block_content
+  theme:
+    - basic
+id: preheader
+theme: basic
+region: pre_header
+weight: -6
+provider: null
+plugin: 'block_content:729722d0-7e7b-42ec-a5cc-898d5fe0c100'
+settings:
+  id: 'block_content:729722d0-7e7b-42ec-a5cc-898d5fe0c100'
+  label: PreHeader
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+visibility: {  }

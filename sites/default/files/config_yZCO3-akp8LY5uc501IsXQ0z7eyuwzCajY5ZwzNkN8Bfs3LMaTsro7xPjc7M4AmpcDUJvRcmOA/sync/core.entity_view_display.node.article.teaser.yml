@@ -1,4 +1,4 @@
-uuid: a61e432f-dbc1-48f2-8fa2-f5d03c239da3
+uuid: bd153f54-535c-4b43-9844-8bd70c40b3dc
 langcode: en
 status: true
 dependencies:
@@ -8,7 +8,7 @@ dependencies:
     - field.field.node.article.comment
     - field.field.node.article.field_image
     - field.field.node.article.field_tags
-    - image.style.medium
+    - image.style.product_image
     - node.type.article
   module:
     - image
@@ -34,8 +34,8 @@ content:
     weight: -1
     region: content
     settings:
-      image_style: medium
-      image_link: content
+      image_style: product_image
+      image_link: ''
     third_party_settings: {  }
     label: hidden
   field_tags:
@@ -45,12 +45,12 @@ content:
     settings:
       link: true
     third_party_settings: {  }
-    label: above
+    label: hidden
   links:
     weight: 100
     region: content
+    settings: {  }
+    third_party_settings: {  }
 hidden:
   comment: true
-  field_image: true
-  field_tags: true
   langcode: true

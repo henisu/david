@@ -1,4 +1,4 @@
-uuid: 78b786f4-bc29-476d-b7c2-52ef645af06e
+uuid: 086f18e1-0212-4ab9-8141-5c250c61f798
 langcode: en
 status: false
 dependencies:
@@ -9,12 +9,12 @@ _core:
 id: basic_page_title
 theme: basic
 region: content
-weight: -50
+weight: -1
 provider: null
 plugin: page_title_block
 settings:
   id: page_title_block
-  label: 'Page title'
+  label: 'Oldal címe'
   provider: core
   label_display: '0'
 visibility: {  }

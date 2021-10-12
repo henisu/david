@@ -1,0 +1,29 @@
+uuid: 3da52bcf-7246-45a2-9b1b-a696c83c4742
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.articles
+  module:
+    - system
+    - views
+  theme:
+    - basic
+id: views_block__articles_block_1
+theme: basic
+region: content
+weight: -3
+provider: null
+plugin: 'views_block:articles-block_1'
+settings:
+  id: 'views_block:articles-block_1'
+  label: ''
+  provider: views
+  label_display: '0'
+  views_label: ''
+  items_per_page: none
+visibility:
+  request_path:
+    id: request_path
+    pages: '<front>'
+    negate: false

@@ -1,0 +1,21 @@
+uuid: ef28367c-e6e2-4d09-9b0d-4949ce59f23a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_taxonomy
+    - node.type.products
+id: node.products.field_taxonomy
+field_name: field_taxonomy
+entity_type: node
+bundle: products
+label: Taxonomy
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings: {  }
+field_type: entity_reference

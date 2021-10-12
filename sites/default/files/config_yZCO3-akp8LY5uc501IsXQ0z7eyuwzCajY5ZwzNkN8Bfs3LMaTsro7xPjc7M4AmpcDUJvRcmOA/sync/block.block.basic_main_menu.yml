@@ -1,4 +1,4 @@
-uuid: 3ad54d71-1076-4b2f-bd6d-df311fd3b1f6
+uuid: 728c746e-6662-444c-a99b-5ac09102274c
 langcode: en
 status: true
 dependencies:
@@ -13,12 +13,12 @@ _core:
 id: basic_main_menu
 theme: basic
 region: header
-weight: -5
+weight: -6
 provider: null
 plugin: 'system_menu_block:main'
 settings:
   id: 'system_menu_block:main'
-  label: 'Main navigation'
+  label: 'Fő navigáció'
   provider: system
   label_display: '0'
   level: 1

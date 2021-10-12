@@ -1,0 +1,10 @@
+uuid: bac0465e-2e42-47bc-b37d-8540cbda527e
+langcode: en
+status: true
+dependencies: {  }
+id: form
+label: Form
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

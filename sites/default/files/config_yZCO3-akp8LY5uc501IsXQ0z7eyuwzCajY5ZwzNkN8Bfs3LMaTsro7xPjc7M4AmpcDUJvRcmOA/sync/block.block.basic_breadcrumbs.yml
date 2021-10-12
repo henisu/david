@@ -1,4 +1,4 @@
-uuid: be40e24f-7648-40a5-b17d-37a05ab136f4
+uuid: abfeb842-fd58-4acd-956d-7e2291086bc7
 langcode: en
 status: false
 dependencies:
@@ -11,12 +11,12 @@ _core:
 id: basic_breadcrumbs
 theme: basic
 region: content
-weight: -45
+weight: 0
 provider: null
 plugin: system_breadcrumb_block
 settings:
   id: system_breadcrumb_block
-  label: Breadcrumbs
+  label: Morzsák
   provider: system
   label_display: '0'
 visibility: {  }

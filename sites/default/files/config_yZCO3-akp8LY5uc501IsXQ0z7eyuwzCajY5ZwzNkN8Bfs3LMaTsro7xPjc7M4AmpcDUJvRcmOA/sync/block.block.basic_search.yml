@@ -1,6 +1,6 @@
-uuid: 8c24e4d9-ffef-4a17-b4fa-4a9f31fef12e
+uuid: 5e8f11fe-3ee1-406d-973b-08019a28e2f3
 langcode: en
-status: false
+status: true
 dependencies:
   module:
     - search
@@ -10,14 +10,14 @@ _core:
   default_config_hash: XtyNN_naHxT0oeqiSmOPc3pB9urhK3qOFNSvfhhGjtY
 id: basic_search
 theme: basic
-region: sidebar_first
-weight: -1
+region: pre_header
+weight: -5
 provider: null
 plugin: search_form_block
 settings:
   id: search_form_block
-  label: Search
+  label: Keresés
   provider: search
-  label_display: visible
+  label_display: '0'
   page_id: ''
 visibility: {  }

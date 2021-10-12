@@ -15,6 +15,7 @@ features:
   comment_user_verification: true
   favicon: true
 logo:
-  use_default: true
+  use_default: false
+  path: themes/basic/logo.svg
 favicon:
   use_default: true

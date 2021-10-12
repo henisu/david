@@ -1,4 +1,4 @@
-uuid: 40d9ee7d-a1e5-49f8-a480-753a261720c8
+uuid: 308e913b-1b11-4fae-8594-4c05eab35033
 langcode: en
 status: true
 dependencies:
@@ -9,12 +9,12 @@ _core:
 id: basic_local_actions
 theme: basic
 region: content
-weight: -20
+weight: -7
 provider: null
 plugin: local_actions_block
 settings:
   id: local_actions_block
-  label: 'Primary admin actions'
+  label: 'Elsődleges adminisztrátori műveletek'
   provider: core
   label_display: '0'
 visibility: {  }
