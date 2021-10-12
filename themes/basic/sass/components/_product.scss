@@ -26,30 +26,9 @@
     .view-item {
       position: relative;
       border-radius: $base-border-radius;
-      // flex-basis: calc(100% / 3 - #{$basic-padding});
       flex-basis: 400px;
 
-      [class*="swiper-button"]::after {
-        color: $primary-color;
-        font-size: 1rem;
-      }
-
-      &-price-wrapper {
-        display: flex;
-        justify-content: center;
-        gap: $half-padding;
-        align-items: center;
-        margin-top: $half-padding;
-        color: $primary-background-color;
-
-        span,
-        span > div {
-          color: red !important;
-          text-decoration: line-through;
-          font-weight: bold;
-          vertical-align: middle;
-        }
-      }
+      @include discountedPrice();
 
       .products__taxonomy,
       .products__discounted-price,
@@ -73,9 +52,8 @@
         border-radius: $base-border-radius;
       }
 
-      .products__discounted-price,
-      .products__price {
-        font-weight: 600;
+      .thumbs {
+        display: none;
       }
 
       .products__taxonomy {
@@ -91,10 +69,6 @@
       }
       &.article {
         flex-basis: 350px;
-        // img {
-        //   width: 100%;
-        //   object-fit: cover;
-        // }
         .article__body {
           padding: $basic-padding $half-padding;
         }
@@ -129,7 +103,9 @@
 
   .product-slider {
     position: relative;
-
+    .swiper-slide {
+      text-align: center;
+    }
     img {
       background-position: center;
       background-size: cover;
@@ -147,7 +123,32 @@
   }
 }
 
+.product-slider {
+  position: relative;
+  .swiper-slide {
+    text-align: center;
+  }
+  img {
+    background-position: center;
+    background-size: cover;
+  }
 
-// .product-page{
+  [class*="swiper-button"]::after {
+    color: $primary-color;
+    font-size: 1rem;
+  }
+  .swiper-slide-thumb-active {
+    opacity: 1 !important;
+  }
+}
 
-// }
+.thumbs {
+  padding: 10px 0;
+  width: 50%;
+  justify-content: center;
+  .swiper-slide {
+    flex-basis: calc(100% / 3 - 5px) !important;
+    object-fit: cover;
+    opacity: 0.5;
+  }
+}

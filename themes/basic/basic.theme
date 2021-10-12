@@ -72,6 +72,13 @@ function basic_preprocess_field(&$variables, $hook) {
  * Implements hook_preprocess_menu().
  */
 function basic_preprocess_menu__footer(&$variables) {
-  // Theme settings
   $variables['attributes']['logo'] = \Drupal::theme()->getActiveTheme()->getLogo();
+}
+
+/**
+ * Implements hook_preprocess_page().
+ */
+function basic_preprocess_node(&$variables) {
+  // $variables['content']['isNode'] = "true";
+  // $variables['content']['created_at'] = \Drupal::request()->attributes->get('node')->getCreatedTime();
 }

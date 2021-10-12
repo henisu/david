@@ -9,3 +9,26 @@
 // For complete documentation:
 // Sass mixins: http://sass-lang.com/docs/yardoc/file.SASS_REFERENCE.html#mixins
 // Bourbon mixins: http://bourbon.io/docs/
+
+@mixin discountedPrice {
+  .view-item-price-wrapper {
+    display: flex;
+    justify-content: center;
+    gap: $half-padding;
+    align-items: center;
+    margin-top: $half-padding;
+    color: $primary-background-color;
+
+    span,
+    span > div {
+      color: #E43A36 !important;
+      text-decoration: line-through;
+      font-weight: bold;
+      vertical-align: middle;
+    }
+  }
+  .products__discounted-price,
+  .products__price {
+      font-weight: 600;
+  }
+}

@@ -12,7 +12,7 @@
             loop: true,
             effect: "slide",
             slidesPerView: 1,
-            spaceBetween: 10,    
+            spaceBetween: 10,
             // autoplay: {
             //   delay: 6000,
             //   disableOnInteraction: false,
@@ -39,12 +39,21 @@
         .once("initSlidersParagraphs")
         .each(function () {
           const id = $(this).attr("id");
+
+          const thumbSwiper = new Swiper(`.swiper-container.thumbs-${id}`, {
+            loop: true,
+            spaceBetween: 10,
+            slidesPerView: 3,
+            freeMode: true,
+            watchSlidesProgress: true,
+          });
+
           new Swiper({
             el: `${SWIPER_BASE} .swiper-container.swiper-${id}`,
             loop: true,
             effect: "slide",
             slidesPerView: 1,
-            spaceBetween: 10,    
+            spaceBetween: 10,
             // autoplay: {
             //   delay: 6000,
             //   disableOnInteraction: false,
@@ -57,6 +66,9 @@
             navigation: {
               prevEl: `.swiper-${id}.swiper-button-prev`,
               nextEl: `.swiper-${id}.swiper-button-next`,
+            },
+            thumbs: {
+              swiper: thumbSwiper,
             },
           });
         });

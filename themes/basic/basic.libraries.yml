@@ -18,6 +18,7 @@ global:
     js/sliders.js: {}
   #   js/build/scripts.js: {}
   dependencies:
+    - core/drupal
     - core/jquery
     - core/jquery.once
 

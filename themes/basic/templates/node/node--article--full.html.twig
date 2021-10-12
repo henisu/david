@@ -1,0 +1,19 @@
+
+
+<div{{ content_attributes.addClass('content article-page') }}>
+
+    {{ content.field_banner }}
+
+    <div class="article-wrapper">
+        <header>
+            <h2{{ title_attributes.addClass(title_classes) }}>
+                {{ label }} 
+            </h2>
+            <div>{{ content.value|date('n/j/Y') }}</div>
+            <span>{{- author_name -}}</span>
+        </header>
+
+        {{ content.body }}
+    </div>
+
+</div>
