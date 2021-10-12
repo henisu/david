@@ -1,0 +1,25 @@
+uuid: af38583d-267a-4b4e-911b-3f6c44fc279c
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:ef573749-6cf6-4e9a-a4af-f5ce39d6ce88'
+  module:
+    - block_content
+  theme:
+    - basic
+id: allrights
+theme: basic
+region: footer
+weight: -7
+provider: null
+plugin: 'block_content:ef573749-6cf6-4e9a-a4af-f5ce39d6ce88'
+settings:
+  id: 'block_content:ef573749-6cf6-4e9a-a4af-f5ce39d6ce88'
+  label: 'All rights'
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+visibility: {  }

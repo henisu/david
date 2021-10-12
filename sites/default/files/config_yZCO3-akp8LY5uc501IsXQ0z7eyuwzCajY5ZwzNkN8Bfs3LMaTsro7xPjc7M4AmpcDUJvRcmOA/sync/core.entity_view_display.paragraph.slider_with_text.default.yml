@@ -1,0 +1,31 @@
+uuid: ef04011c-87f8-4ff3-9c8d-dbed3498cc87
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.slider_with_text.field_slider_image
+    - field.field.paragraph.slider_with_text.field_slider_text
+    - paragraphs.paragraphs_type.slider_with_text
+  module:
+    - image
+id: paragraph.slider_with_text.default
+targetEntityType: paragraph
+bundle: slider_with_text
+mode: default
+content:
+  field_slider_image:
+    weight: 0
+    label: hidden
+    settings:
+      image_style: ''
+    third_party_settings: {  }
+    type: image_url
+    region: content
+  field_slider_text:
+    weight: 1
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
+    region: content
+hidden: {  }

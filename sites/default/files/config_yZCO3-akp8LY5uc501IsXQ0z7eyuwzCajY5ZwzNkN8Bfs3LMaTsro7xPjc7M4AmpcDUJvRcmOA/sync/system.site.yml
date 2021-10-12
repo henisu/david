@@ -1,0 +1,14 @@
+uuid: 2143a280-57a0-402f-8b72-76b52d6fe8d3
+name: 'Eva House'
+mail: vktrnagy64@gmail.com
+slogan: ''
+page:
+  403: ''
+  404: ''
+  front: /node/1
+admin_compact_mode: false
+weight_select_max: 100
+langcode: en
+default_langcode: en
+_core:
+  default_config_hash: yTxtFqBHnEWxQswuWvkjE8mKw2t8oKuCL1q8KnfHuGE

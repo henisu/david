@@ -1,0 +1,10 @@
+uuid: 4a1e06f0-0501-4f28-bb9f-ea865f712684
+langcode: en
+status: true
+dependencies: {  }
+id: basic_section
+label: 'Basic Section'
+icon_uuid: null
+icon_default: null
+description: 'Wraps the content in one div'
+behavior_plugins: {  }

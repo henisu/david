@@ -1,0 +1,635 @@
+// Layout
+// ------
+// Using a negative margin technique, made possible with Bourbon Neat, the page
+// is loaded in this order:
+
+// 1. Header
+// 2. Content
+// 3. Navigation menus
+// 4. Sidebar Left
+// 5. Sideabr Right
+//
+// Layout rules.
+// (Disclaimer: do not change if you're not sure you know what you're doing.)
+
+@mixin centerDiv() {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+@mixin basicTitle() {
+  font-weight: bold;
+  margin-bottom: 0;
+  font-size: 38px;
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,700;1,300;1,500&display=swap");
+
+html {
+  background-color: $background-color;
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+.layout {
+  margin: 0;
+  padding: 0;
+
+  display: flex;
+  flex-direction: column;
+  min-height: 99.99vh;
+}
+
+#content {
+  flex: 1;
+}
+
+.layout {
+  *:not(span),
+  *::before,
+  *::after {
+    box-sizing: inherit;
+    font-family: "Poppins";
+    font-weight: 400;
+    letter-spacing: 0.03em;
+  }
+  p {
+    font-weight: 300;
+  }
+}
+
+h1,
+h2,
+span {
+  font-weight: 600 !important;
+  letter-spacing: 0.05em;
+}
+
+#content-wrapper {
+  @include grid-collapse;
+}
+
+#content {
+  .no-sidebar & {
+    // 100% width for small screens.
+    @include grid-column(4);
+
+    // Same logic for medium screens.
+    @include grid-media($medium-screen-up) {
+      @include grid-column(8);
+    }
+
+    // Same logic for large screens.
+    @include grid-media($large-screen-up) {
+      @include grid-column(12);
+    }
+  }
+
+  .one-sidebar.sidebar-second & {
+    // 100% width for small screens. No definitions required.
+    // Span this div 6 columns wide for medium screens.
+    @include grid-media($medium-screen-up) {
+      @include grid-column(6);
+    }
+
+    // Span this div 8 columns wide for large screens.
+    @include grid-media($large-screen-up) {
+      @include grid-column(8);
+    }
+  }
+
+  .one-sidebar.sidebar-first & {
+    // 100% width for small screens. No definitions required.
+    // Span this div 6 columns wide for medium screens.
+    @include grid-media($medium-screen-up) {
+      @include grid-column(6);
+      @include grid-push(2);
+    }
+
+    // Span this div 9 columns wide for large screens.
+    @include grid-media($large-screen-up) {
+      @include grid-column(9);
+      @include grid-push(3);
+    }
+  }
+
+  .two-sidebars & {
+    // 100% width for small screens. No definitions required.
+    // Span this div 4 columns wide for medium screens.
+    @include grid-media($medium-screen-up) {
+      @include grid-column(4);
+      @include grid-push(2);
+    }
+
+    // Span this div 5 columns wide for large screens.
+    @include grid-media($large-screen-up) {
+      @include grid-column(5);
+      @include grid-push(3);
+    }
+  }
+}
+
+// Layout Helpers
+#header,
+#footer,
+.mission,
+.breadcrumb,
+.node {
+  clear: both;
+}
+
+.pre_header {
+  color: $low-color;
+  &_wrapper > div {
+    background-color: $pre-header-color;
+    padding: 0.3rem $big-padding;
+    justify-content: space-between;
+    @include centerDiv();
+    gap: $basic-padding;
+    font-size: 14px;
+
+    #search-block-form {
+      @include centerDiv();
+      gap: $basic-padding;
+
+      .form-search {
+        margin-bottom: 0;
+      }
+    }
+
+    .block-preheader {
+      flex-grow: 1;
+    }
+  }
+  @include centerDiv();
+  justify-content: space-between;
+
+  &__socials,
+  &__info {
+    display: flex;
+    gap: $basic-padding;
+    align-items: center;
+  }
+  &__info {
+    img {
+      vertical-align: sub;
+      margin-right: $half-padding - 0.4rem;
+    }
+    > div:not(:last-child)::after {
+      content: "•";
+      margin-left: $basic-padding;
+      color: $primary-color;
+    }
+  }
+}
+
+#header {
+  .container {
+    max-width: 100%;
+  }
+  #header-region {
+    background-color: $primary-background-color;
+    padding: ($basic-padding - $half-padding) $big-padding;
+    > div {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      > div,
+      nav {
+        flex-basis: 33%;
+        flex-grow: 1;
+      }
+    }
+    a.is-active {
+      color: $primary-color !important;
+      font-weight: bold;
+    }
+    #block-language .menu {
+      display: flex;
+      gap: 0.5rem;
+      text-transform: uppercase;
+      justify-content: end;
+    }
+
+    .menu--main .menu {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+
+      .menu-item {
+        a {
+          color: #fff;
+          text-transform: uppercase;
+        }
+
+        &:not(:last-child)::after {
+          content: "|";
+          margin-left: $half-padding;
+          white-space: pre-wrap;
+          color: $low-color;
+        }
+      }
+    }
+  }
+}
+
+.paragraph-slider {
+  position: relative;
+}
+
+.swiper-slide {
+  width: 100% !important;
+  &-text {
+    position: absolute;
+    left: 140px;
+    right: -34px;
+    bottom: 77px;
+    z-index: 10;
+    width: 500px;
+    font-weight: bold;
+    color: #fff;
+    text-align: center;
+    font-size: 72px;
+    div {
+      font-family: "Space Grotesk", sans-serif;
+      background: #b97399;
+    }
+  }
+  &-image {
+    position: relative;
+    display: inline-block;
+    vertical-align: top;
+    width: 100%;
+    height: calc(
+      100vh - #{$basic-padding} - #{$half-padding} - 4.3rem
+    ) !important;
+    // height: calc(100vh - 2rem - 0.7rem) !important;
+
+    white-space: normal;
+    text-align: left;
+    background-position: center;
+    background-size: cover;
+  }
+}
+
+.gallery__section__title,
+.basic_section__section-title {
+  text-align: center;
+  h2 {
+    @include basicTitle();
+  }
+}
+
+.image_with_text_cube__header-text {
+  @include basicTitle();
+  text-shadow: 0px 0px 5px rgb(0, 0, 0);
+}
+
+.basic_section {
+  &__paragraphs {
+    display: flex;
+    flex-direction: column;
+    padding: $big-padding 0;
+    flex-wrap: wrap;
+    @media #{$Tablet} {
+      flex-direction: row;
+    }
+
+    > div {
+      display: flex;
+      flex-basis: calc(100% / 3);
+      flex-direction: column;
+    }
+
+    .image-with-cube {
+      height: $image-height;
+      background-position: center;
+      background-size: cover;
+    }
+
+    .text-absolute {
+      @include centerDiv();
+      color: #fff;
+      font-size: 36px;
+      height: $image-height;
+
+      .image-with-cube-text-sub {
+        visibility: hidden;
+      }
+      transition: background-color 550ms ease 0s;
+
+      &:hover {
+        background-color: rgba(183, 111, 150, 0.7);
+        .image_with_text_cube__header-text {
+          text-shadow: none;
+        }
+        .image-with-cube-text-sub {
+          transform-style: preserve-3d;
+          visibility: visible;
+          transition: visibility 550ms ease 100ms;
+        }
+      }
+    }
+  }
+}
+
+.slider_row__-paragraph {
+  display: flex;
+  gap: $big-padding;
+  padding: 0 0 $big-padding;
+  width: $container;
+  margin: auto;
+  justify-items: center;
+  > div {
+    display: block;
+    text-align: center;
+    flex-basis: 50%;
+  }
+
+  .paragraph--type--hero-section {
+    padding-bottom: 0;
+  }
+  .image_images,
+  .swiper-slide-image {
+    height: $image-height * 2 + 5rem !important;
+  }
+}
+
+.swiper-button-navigation {
+  display: flex;
+  justify-content: center;
+}
+
+.swiper-pagination {
+  bottom: 0;
+  &-bullet {
+    display: flex;
+    width: 0.6rem !important;
+    height: 0.6rem !important;
+    margin: 0 0.3rem;
+    background: $low-color !important;
+    opacity: 1 !important;
+    &-active {
+      background: $primary-color !important;
+    }
+  }
+}
+
+.paragraph--type--basic-title-with-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+  justify-content: center;
+  gap: 1rem;
+  .basic_title_with_text__title {
+    font-weight: bold;
+    font-size: 2rem;
+    font-family: "Space Grotesk", sans-serif;
+  }
+}
+
+.swiper-button-prev::after,
+.swiper-button-next::after {
+  color: #fff;
+  font-weight: bold;
+}
+
+.paragraph--type--hero-section {
+  padding-bottom: $big-padding;
+}
+
+.gallery__-images {
+  margin-bottom: $big-padding;
+
+  display: flex;
+  transition: all 0.3s ease;
+  flex-flow: row wrap;
+  padding: 0 $basic-padding;
+  justify-content: center;
+  gap: $basic-padding;
+  > div {
+    flex-basis: calc((100% / 3) - 2rem);
+    // flex-grow: 1;
+    transition: all 0.3s ease;
+  }
+  .image__images {
+    height: 100%;
+  }
+
+  .paragraph--type--image {
+    height: 100%;
+    cursor: pointer;
+    img {
+      object-fit: cover;
+      height: 100%;
+    }
+  }
+}
+
+.zoom {
+  flex-basis: calc(((100% / 3) * 2) - 2rem) !important;
+}
+
+#block-allrights {
+  display: flex;
+  justify-content: center;
+  padding: $small-spacing;
+  background-color: #7a4c65;
+  color: white;
+}
+
+.footer-socials {
+  display: flex;
+  gap: $basic-padding;
+  a {
+    color: $primary-color;
+    font-weight: bold;
+  }
+}
+
+.footer-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: $basic-padding $big-padding;
+  background-color: $primary-background-color;
+
+  a {
+    color: $primary-color;
+    font-weight: bold;
+  }
+}
+
+.basic__body {
+  position: relative;
+  .top-section {
+    padding: $big-padding ($big-padding * 2);
+    height: 60vh;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    h2 {
+      text-transform: uppercase;
+      color: $hight-color;
+      font-size: 2.2rem;
+
+      &::after {
+        content: " ";
+        display: block;
+        margin-top: $half-padding;
+        width: 4rem;
+        background-color: rgba(255, 255, 255, 0.7);
+        height: 2px;
+      }
+    }
+    div {
+      font-size: 3.75rem;
+      text-transform: uppercase;
+      font-weight: bold;
+      color: #fff;
+    }
+    p {
+      color: #fff;
+    }
+  }
+  .mid-section {
+    position: absolute;
+    top: 52%;
+    margin-left: auto;
+    margin-right: auto;
+    left: 50%;
+    justify-content: center;
+    transform: translate(-50%, -50%);
+    display: flex;
+
+    > div {
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      flex-basis: 400px;
+      background-color: #fff;
+      border-radius: 0 $base-border-radius $base-border-radius 0;
+
+      h3 {
+        font-weight: bold;
+        &::after {
+          content: " ";
+          display: block;
+          margin-top: $half-padding;
+          width: 4rem;
+          background-color: #fc5252;
+          height: 2px;
+        }
+      }
+    }
+
+    > div:first-child {
+      border-radius: $base-border-radius 0 0 $base-border-radius;
+      padding: $basic-padding ($basic-padding + $basic-padding);
+    }
+  }
+  .bottom-section {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: ($big-padding + $basic-padding) $big-padding 0;
+    height: 60vh;
+    background-color: rgba(#1e2123, 1);
+
+    &-header {
+      margin-top: $basic-padding * 2;
+      text-align: center;
+      h2 {
+        color: $primary-color;
+        text-transform: uppercase;
+        font-size: 1rem;
+        font-weight: 400 !important;
+      }
+      h3 {
+        color: #fff;
+        font-weight: 600 !important;
+        margin-top: 0.75rem;
+        letter-spacing: 0.05em;
+      }
+    }
+    &-content {
+      display: flex;
+      justify-content: center;
+      gap: $big-padding;
+      text-align: center;
+      padding-top: $basic-padding * 2;
+      > div {
+        flex-basis: 100%;
+        border-radius: $base-border-radius;
+        img {
+          width: 78px;
+          height: 100px;
+          align-self: center;
+        }
+        display: flex;
+        flex-direction: column;
+        gap: $basic-padding;
+
+        > div {
+          color: #fff;
+          text-transform: uppercase;
+          font-size: 1.1rem;
+        }
+        p {
+          color: $paragraph-on-black;
+          font-size: $sub-text;
+        }
+      }
+    }
+  }
+}
+
+.paragraph--type--form {
+  margin-top: $basic-padding;
+}
+
+.webform-submission-contact-form {
+  padding: $section-padding;
+  width: 40%;
+  margin: auto;
+  .contact-form {
+    display: flex;
+    flex-direction: column;
+    padding: 5rem $big-padding;
+    background-color: $primary-background-color;
+
+    #edit-flexbox-01 {
+      gap: $basic-padding;
+    }
+    .webform-flex--container {
+      margin: 0;
+    }
+    label {
+      color: #fff;
+    }
+    #edit-actions {
+      text-align: center;
+      &-submit {
+        color: #fff;
+      }
+    }
+    &-header {
+      text-align: center;
+      h3 {
+        text-transform: uppercase;
+        color: $primary-color;
+        font-size: 1rem;
+      }
+      h2 {
+        color: #fff;
+      }
+    }
+  }
+}

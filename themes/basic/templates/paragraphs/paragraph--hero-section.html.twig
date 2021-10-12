@@ -1,0 +1,34 @@
+{%
+  set classes = [
+    'paragraph',
+    'paragraph--type--' ~ paragraph.bundle|clean_class,
+    view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
+    not paragraph.isPublished() ? 'paragraph--unpublished'
+  ]
+%}
+{% block paragraph %}
+<div{{ attributes.addClass(classes) }}>
+{% if content.field_paragraph['#items']|length > 1 %}
+    <div class="paragraph-slider paragraph-slider-{{ paragraph.id() }} paragraph-slider--{{ content.field_slider_type|render|striptags|trim|lower }}">
+        <div id="{{ paragraph.id() }}" class="swiper-container swiper-{{ paragraph.id() }}">
+            <div class="swiper-wrapper">
+                {% for items in content.field_paragraph['#items'] %}
+                    <div class="swiper-slide">
+                        {{content.field_paragraph[loop.index -1]}}
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+        <!-- Add navigation -->
+        <div class="swiper-button-navigation">
+            <div class="swiper-button-navigation__container">
+                <div class="paragraph-slider-{{ paragraph.id() }}-swiper-button swiper-button-prev swiper-{{ paragraph.id() }}"></div>
+                <div class="paragraph-slider-{{ paragraph.id() }}-swiper-button swiper-button-next swiper-{{ paragraph.id() }}"></div>
+            </div>
+        <!-- Add Pagination -->
+            <div class="paragraph-slider-{{ paragraph.id() }}-swiper-pagination swiper-pagination swiper-{{ paragraph.id() }}"></div>
+        </div>
+    </div>
+{% endif %}
+</div>
+{% endblock paragraph %}

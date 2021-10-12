@@ -1,0 +1,28 @@
+{%
+  set classes = [
+    'paragraph',
+    'paragraph--type--' ~ paragraph.bundle|clean_class,
+    view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
+    not paragraph.isPublished() ? 'paragraph--unpublished'
+  ]
+%}
+{% block paragraph %}
+  <div{{ attributes.addClass(classes) }}>
+    {% block content %}
+
+      {% if content.field_link_to_content|render %}
+        <a href={{content.field_link_to_content|render|striptags|trim }}>
+      {% endif %}
+            <div class="image-with-cube" style="background-image: url({{content.field_image|render|striptags|trim }})">
+                <div class="text-absolute">
+                    <div class="image-with-cube-text">{{content.field_header_text}}</div>
+                    <div class="image-with-cube-text-sub">{{content.field_sub_text}}</div>
+                </div>
+            </div>
+      {% if content.field_link_to_content|render %}
+        </a>
+      {% endif %}
+
+    {% endblock %}
+  </div>
+{% endblock paragraph %}

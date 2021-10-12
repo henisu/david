@@ -1,0 +1,41 @@
+{% set id = random() %}
+
+{% block content %}
+
+  {% if items|length > 1 %}
+    <div class="product-slider product-slider-{{ id }}">
+      <div id="{{ id }}" class="swiper-container swiper-{{ id }}">
+        {% block items %}
+          <div class="swiper-wrapper">
+            {% for item in items %}
+              {% block item %}
+                <div class="swiper-slide">
+                  <div>{{- item.content -}}</div>
+                </div>
+              {% endblock %}
+            {% endfor %}
+          </div>
+        {% endblock %}
+      </div>
+      <!-- Add navigation -->
+        <div class="swiper-button-navigation">
+            <div class="swiper-button-navigation__container">
+                <div class="product-slider-{{ id }}-swiper-button swiper-button-prev swiper-{{ id }}"></div>
+                <div class="product-slider-{{ id }}-swiper-button swiper-button-next swiper-{{ id }}"></div>
+            </div>
+        <!-- Add Pagination -->
+            <div class="product-slider-{{ id }}-swiper-pagination swiper-pagination swiper-{{ id }}"></div>
+        </div>
+    </div>
+  {% else %}
+
+    {# {% block items %} #}
+      {% for item in items %}
+        {# {% block item %} #}
+          <div>{{- item.content -}}</div>
+        {# {% endblock %} #}
+      {% endfor %}
+    {# {% endblock %} #}
+
+  {% endif %}
+{% endblock %}

@@ -1,0 +1,32 @@
+uuid: 475e2a2c-cb31-40a9-a3eb-73476b20187c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.basic_title_with_text.field_text_body
+    - field.field.paragraph.basic_title_with_text.field_title
+    - paragraphs.paragraphs_type.basic_title_with_text
+id: paragraph.basic_title_with_text.default
+targetEntityType: paragraph
+bundle: basic_title_with_text
+mode: default
+content:
+  field_text_body:
+    weight: 1
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textarea
+    region: content
+  field_title:
+    weight: 0
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textarea
+    region: content
+hidden:
+  created: true
+  status: true

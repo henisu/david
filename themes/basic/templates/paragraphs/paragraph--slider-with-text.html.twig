@@ -1,0 +1,17 @@
+{%
+  set classes = [
+    'paragraph',
+    'paragraph--type--' ~ paragraph.bundle|clean_class,
+    view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
+    not paragraph.isPublished() ? 'paragraph--unpublished'
+  ]
+%}
+{% block paragraph %}
+  <div{{ attributes.addClass(classes) }}>
+    {% block content %}
+        <div class="swiper-slide-image" style="background-image: url({{content.field_slider_image|render|striptags|trim }})">
+            <div class="swiper-slide-text">{{content.field_slider_text}}</div>
+        </div>
+    {% endblock %}
+  </div>
+{% endblock paragraph %}

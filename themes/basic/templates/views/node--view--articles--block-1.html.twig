@@ -1,0 +1,30 @@
+
+{% set classes = [
+  'node'
+] %}
+
+
+<a {{ attributes.addClass(classes) }} href="{{url}}">
+
+  <div{{ content_attributes.addClass('content') }}>
+
+    {{ content.field_image }}
+
+    {% if title_prefix or title_suffix or display_submitted or unpublished or page is empty and label %}
+        <header>
+        {% if not page and label %}
+            <div>{{ date.value|date('n/j/Y') }}</div>
+            <h2{{ title_attributes.addClass(title_classes) }}>
+                {{ label }}
+            </h2>
+        {% endif %}
+        </header>
+    {% endif %}
+
+    {{ content.body }}
+
+    {{ content.links }}
+
+  </div>
+
+</a>

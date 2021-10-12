@@ -1,0 +1,21 @@
+uuid: 9dbbec75-b3a7-4d00-9328-9178d58108f1
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_section__title
+    - paragraphs.paragraphs_type.gallery
+  module:
+    - text
+id: paragraph.gallery.field_section__title
+field_name: field_section__title
+entity_type: paragraph
+bundle: gallery
+label: Title
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

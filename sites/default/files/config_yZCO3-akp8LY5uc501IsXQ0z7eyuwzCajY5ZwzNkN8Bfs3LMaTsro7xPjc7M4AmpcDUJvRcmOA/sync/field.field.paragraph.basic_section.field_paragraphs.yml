@@ -1,0 +1,50 @@
+uuid: 91914946-28b3-4a8d-803d-18e63eeda1f7
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_paragraphs
+    - paragraphs.paragraphs_type.basic_section
+    - paragraphs.paragraphs_type.basic_title_with_text
+    - paragraphs.paragraphs_type.image_with_text_cube
+    - paragraphs.paragraphs_type.slider_row
+  module:
+    - entity_reference_revisions
+id: paragraph.basic_section.field_paragraphs
+field_name: field_paragraphs
+entity_type: paragraph
+bundle: basic_section
+label: Paragraph
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      image_with_text_cube: image_with_text_cube
+      basic_title_with_text: basic_title_with_text
+      slider_row: slider_row
+    target_bundles_drag_drop:
+      basic_section:
+        weight: 5
+        enabled: false
+      basic_title_with_text:
+        enabled: true
+        weight: 8
+      hero_section:
+        weight: 6
+        enabled: false
+      image_with_text_cube:
+        enabled: true
+        weight: 7
+      slider_row:
+        enabled: true
+        weight: 11
+      slider_with_text:
+        weight: 8
+        enabled: false
+field_type: entity_reference_revisions
