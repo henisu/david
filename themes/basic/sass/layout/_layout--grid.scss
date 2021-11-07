@@ -37,18 +37,18 @@ body {
   height: 100%;
 }
 
-.layout {
+#main {
   margin: 0;
   padding: 0;
 
   display: flex;
   flex-direction: column;
   min-height: 99.99vh;
+  .container {
+    flex: 1;
+  }
 }
 
-#content {
-  flex: 1;
-}
 
 .layout {
   *:not(span),
@@ -61,6 +61,82 @@ body {
   }
   p {
     font-weight: 300;
+  }
+}
+
+#sidebar-first {
+  float: left;
+  flex-basis: 15%;
+}
+.one-sidebar.sidebar-first #content-wrapper {
+  width: unset;
+  margin: 0;
+  display: flex;
+  padding: $section-padding;
+  gap: $big-padding;
+  #content {
+    margin: 0;
+    width: 100%;
+    float: none;
+    .view {
+      padding: 0;
+    }
+  }
+}
+
+.bef-checkboxes > ul {
+  .js-form-item {
+    display: flex;
+    align-items: center;
+    gap: $half-padding;
+
+    label {
+      margin: 0;
+      flex-grow: 1;
+    }
+    .open {
+      padding: 0 $half-padding;
+      background-image: url("../../images/svgs/arrow-down.svg");
+      width: 0.5rem;
+      height: 0.5rem;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: contain;
+      transition: all 0.5s;
+      cursor: pointer;
+      &.active {
+        transform: rotate(180deg);
+      }
+    }
+  }
+  ul {
+    padding-left: $basic-padding;
+    display: none;
+    .accordion:last-of-type {
+      &::after {
+        display: none;
+      }
+    }
+
+    .accordion:first-of-type {
+      margin-top: $half-padding;
+    }
+  }
+  .accordion {
+    padding: $half-padding 0 0;
+    &::after {
+      width: 100%;
+      height: 1px;
+      display: block;
+      content: " ";
+      margin-top: $half-padding;
+      background-color: #e5e5e5;
+    }
+  }
+
+  [type="checkbox"] {
+    height: 1rem;
+    width: 1rem;
   }
 }
 
@@ -204,6 +280,7 @@ span {
       nav {
         flex-basis: 33%;
         flex-grow: 1;
+        flex-shrink: 1;
       }
     }
     a.is-active {
@@ -213,13 +290,13 @@ span {
     #block-language .menu {
       display: flex;
       gap: 0.5rem;
+      flex-shrink: 1;
       text-transform: uppercase;
       justify-content: end;
     }
 
     .menu--main .menu {
-      display: flex;
-      justify-content: center;
+      display: -webkit-box;
       gap: 1rem;
 
       .menu-item {
@@ -604,7 +681,6 @@ span {
     flex-direction: column;
     padding: 5rem $big-padding;
     background-color: $primary-background-color;
-
     #edit-flexbox-01 {
       gap: $basic-padding;
     }
@@ -615,6 +691,7 @@ span {
       color: #fff;
     }
     #edit-actions {
+      margin-top: $half-padding *2;
       text-align: center;
       &-submit {
         color: #fff;

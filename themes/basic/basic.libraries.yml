@@ -15,11 +15,13 @@ global:
     js/modernizr.js: {}
     js/basic.js: {}
     libraries/swiper/js/swiper.min.js: {}
+    libraries/jquery.ui.touch-punch.min.js: {}
     js/sliders.js: {}
   #   js/build/scripts.js: {}
   dependencies:
     - core/drupal
     - core/jquery
+    - jquery_ui_accordion/accordion
     - core/jquery.once
 
   # Uncomment the code above to load scripts.js file on all pages. This file also requires JQuery to be
